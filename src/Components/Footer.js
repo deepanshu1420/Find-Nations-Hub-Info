@@ -36,7 +36,7 @@ const Footer = () => {
         className="button"
         onClick={() => {
           const windosw = window.open(
-            "https://github.com/Sanskargupta0/Nations-Hub",
+            "https://github.com/deepanshu1420/Find-Nations-Hub-Info",
             "_blank"
           );
           windosw.focus();
