@@ -18,37 +18,15 @@ const API_URL =
 function getQuizQuestion(country, quizType) {
   switch (quizType) {
     case "region":
-      return {
-        question: `Which region does ${country.name.common} belong to?`,
-        answer: country.region || "Unknown",
-      };
+      return { question: `Which region does ${country.name.common} belong to?`, answer: country.region || "Unknown" };
     case "sub-region":
-      return {
-        question: `Which sub-region does ${country.name.common} belong to?`,
-        answer: country.subregion || "Unknown",
-      };
+      return { question: `Which sub-region does ${country.name.common} belong to?`, answer: country.subregion || "Unknown" };
     case "capital":
-      return {
-        question: `What is the capital of ${country.name.common}?`,
-        answer:
-          country.capital && country.capital[0]
-            ? country.capital[0]
-            : "Unknown",
-      };
+      return { question: `What is the capital of ${country.name.common}?`, answer: country.capital && country.capital[0] ? country.capital[0] : "Unknown" };
     case "currencies":
-      return {
-        question: `What is the currency of ${country.name.common}?`,
-        answer: country.currencies
-          ? Object.values(country.currencies)[0]?.name
-          : "Unknown",
-      };
+      return { question: `What is the currency of ${country.name.common}?`, answer: country.currencies ? Object.values(country.currencies)[0]?.name : "Unknown" };
     case "languages":
-      return {
-        question: `What is an official language of ${country.name.common}?`,
-        answer: country.languages
-          ? Object.values(country.languages)[0]
-          : "Unknown",
-      };
+      return { question: `What is an official language of ${country.name.common}?`, answer: country.languages ? Object.values(country.languages)[0] : "Unknown" };
     default:
       return { question: "", answer: "" };
   }
@@ -61,28 +39,12 @@ function getOptions(countries, quizType, correctAnswer) {
     const random = countries[Math.floor(Math.random() * countries.length)];
     let value = "";
     switch (quizType) {
-      case "region":
-        value = random.region || "Unknown";
-        break;
-      case "sub-region":
-        value = random.subregion || "Unknown";
-        break;
-      case "capital":
-        value =
-          random.capital && random.capital[0] ? random.capital[0] : "Unknown";
-        break;
-      case "currencies":
-        value = random.currencies
-          ? Object.values(random.currencies)[0]?.name
-          : "Unknown";
-        break;
-      case "languages":
-        value = random.languages
-          ? Object.values(random.languages)[0]
-          : "Unknown";
-        break;
-      default:
-        value = "";
+      case "region": value = random.region || "Unknown"; break;
+      case "sub-region": value = random.subregion || "Unknown"; break;
+      case "capital": value = random.capital && random.capital[0] ? random.capital[0] : "Unknown"; break;
+      case "currencies": value = random.currencies ? Object.values(random.currencies)[0]?.name : "Unknown"; break;
+      case "languages": value = random.languages ? Object.values(random.languages)[0] : "Unknown"; break;
+      default: value = "";
     }
     options.add(value);
   }
@@ -90,10 +52,7 @@ function getOptions(countries, quizType, correctAnswer) {
 }
 
 function getHighScore(quizType) {
-  return parseInt(
-    localStorage.getItem(`quiz_highscore_${quizType}`) || "0",
-    10
-  );
+  return parseInt(localStorage.getItem(`quiz_highscore_${quizType}`) || "0", 10);
 }
 
 function setHighScore(quizType, score) {
@@ -107,17 +66,13 @@ function NormalQuiz({ quizType: quizTypeProp }) {
   const [current, setCurrent] = useState(null);
   const [options, setOptions] = useState([]);
   const [score, setScore] = useState(0);
-  const [highScore, setHighScoreState] = useState(
-    getHighScore(quizTypeProp || QUIZ_TYPES[0].key)
-  );
+  const [highScore, setHighScoreState] = useState(getHighScore(quizTypeProp || QUIZ_TYPES[0].key));
   const [questionNum, setQuestionNum] = useState(1);
   const [selected, setSelected] = useState(null);
   const [showResult, setShowResult] = useState(false);
 
   useEffect(() => {
-    if (quizTypeProp && quizTypeProp !== quizType) {
-      setQuizType(quizTypeProp);
-    }
+    if (quizTypeProp && quizTypeProp !== quizType) setQuizType(quizTypeProp);
   }, [quizTypeProp]);
 
   useEffect(() => {
@@ -134,18 +89,12 @@ function NormalQuiz({ quizType: quizTypeProp }) {
     (type = quizType, data = countries) => {
       const filtered = data.filter((c) => {
         switch (type) {
-          case "region":
-            return c.region;
-          case "sub-region":
-            return c.subregion;
-          case "capital":
-            return c.capital && c.capital.length > 0;
-          case "currencies":
-            return c.currencies && Object.values(c.currencies).length > 0;
-          case "languages":
-            return c.languages && Object.values(c.languages).length > 0;
-          default:
-            return false;
+          case "region": return c.region;
+          case "sub-region": return c.subregion;
+          case "capital": return c.capital && c.capital.length > 0;
+          case "currencies": return c.currencies && Object.values(c.currencies).length > 0;
+          case "languages": return c.languages && Object.values(c.languages).length > 0;
+          default: return false;
         }
       });
       const country = filtered[Math.floor(Math.random() * filtered.length)];
@@ -157,6 +106,7 @@ function NormalQuiz({ quizType: quizTypeProp }) {
     [countries, quizType]
   );
 
+  // ✅ Added quizType here to fix ESLint warning
   useEffect(() => {
     setHighScoreState(getHighScore(quizType));
     setScore(0);
@@ -178,9 +128,7 @@ function NormalQuiz({ quizType: quizTypeProp }) {
         setHighScoreState(score + 1);
       }
     } else {
-      toast.error(`Wrong! Correct: ${current.answer}`, {
-        icon: <FaTimesCircle style={{ color: '#e53935' }} />,
-      });
+      toast.error(`Wrong! Correct: ${current.answer}`, { icon: <FaTimesCircle style={{ color: '#e53935' }} /> });
       setScore((s) => (s > 0 ? s - 1 : 0));
     }
     setTimeout(() => {
