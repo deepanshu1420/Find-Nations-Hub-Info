@@ -1,6 +1,6 @@
 /* This component now uses CSS variables defined by your .darkMode and .lightMode themes */
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { toast } from "sonner";
 import { FaCheckCircle, FaTimesCircle, FaTrophy } from "react-icons/fa";
 
@@ -130,6 +130,33 @@ function NormalQuiz({ quizType: quizTypeProp }) {
       });
   }, []);
 
+  const nextQuestion = useCallback(
+    (type = quizType, data = countries) => {
+      const filtered = data.filter((c) => {
+        switch (type) {
+          case "region":
+            return c.region;
+          case "sub-region":
+            return c.subregion;
+          case "capital":
+            return c.capital && c.capital.length > 0;
+          case "currencies":
+            return c.currencies && Object.values(c.currencies).length > 0;
+          case "languages":
+            return c.languages && Object.values(c.languages).length > 0;
+          default:
+            return false;
+        }
+      });
+      const country = filtered[Math.floor(Math.random() * filtered.length)];
+      const { question, answer } = getQuizQuestion(country, type);
+      setCurrent({ country, question, answer });
+      setOptions(getOptions(filtered, type, answer));
+      setSelected(null);
+    },
+    [countries, quizType]
+  );
+
   useEffect(() => {
     setHighScoreState(getHighScore(quizType));
     setScore(0);
@@ -137,25 +164,7 @@ function NormalQuiz({ quizType: quizTypeProp }) {
     setShowResult(false);
     setSelected(null);
     if (countries.length > 0) nextQuestion(quizType, countries);
-  }, [quizType, countries]);
-
-  function nextQuestion(type = quizType, data = countries) {
-    const filtered = data.filter((c) => {
-      switch (type) {
-        case "region": return c.region;
-        case "sub-region": return c.subregion;
-        case "capital": return c.capital && c.capital.length > 0;
-        case "currencies": return c.currencies && Object.values(c.currencies).length > 0;
-        case "languages": return c.languages && Object.values(c.languages).length > 0;
-        default: return false;
-      }
-    });
-    const country = filtered[Math.floor(Math.random() * filtered.length)];
-    const { question, answer } = getQuizQuestion(country, type);
-    setCurrent({ country, question, answer });
-    setOptions(getOptions(filtered, type, answer));
-    setSelected(null);
-  }
+  }, [quizType, countries, nextQuestion]);
 
   function handleOption(option) {
     if (selected) return;
