@@ -94,7 +94,7 @@ Follow these steps to set up Find-Nations-Hub-Info locally:
 # Clone the repository
 git clone https://github.com/deepanshu1420/Find-Nations-Hub-Info.git
 
-# Navigate to project directory
+# Navigate to the project directory
 cd Find-Nations-Hub-Info
 
 # Install dependencies
