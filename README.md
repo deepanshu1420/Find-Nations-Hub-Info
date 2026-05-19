@@ -8,12 +8,9 @@
 
 Welcome to Find-Nations-Hub-Info! 🎉 Explore information about every country on Earth with our rich interactive experience. Discover stats, flags, and challenge yourself with geography games! 🌎✨  
 
-## 🌐 Live Demo  
-Check out the live demo of [Find-Nations-Hub-Info](https://nationshub-online.netlify.app/) to explore the features.  
+**Explore national flags and country info from around the world :** [Live Demo](https://nationshub-online.netlify.app/)  
 
----
-
-## ✨ Features
+## ✨ Features / Highlights
 
 - **📚 Country Information:** Detailed stats including population, area, capital, languages, currency  
 - **🎌 Flag Gallery:** Comprehensive collection of national flags  
@@ -27,17 +24,13 @@ Check out the live demo of [Find-Nations-Hub-Info](https://nationshub-online.net
   - **🗣️ Languages Quiz:** Identify official languages  
 - **📱 Responsive Design:** Works perfectly on all devices  
 
----
+## ⚙️ Tech Stack Used
 
-## ⚙️ Tech Stack  
-
-- React.js  
-- HTML5  
-- CSS3  
-- JavaScript  
-- [REST Countries API](https://restcountries.com/)  
-
----
+- ⚛️ Frontend: React.js  
+- 🌐 Markup: HTML5  
+- 🎨 Styling: CSS3  
+- 🟨 Programming Language: JavaScript (ES6+)  
+- 🔗 API: [REST Countries API](https://restcountries.com/)   
 
 ## 🎮 Game Descriptions  
 
@@ -65,34 +58,35 @@ Match countries to their currencies
 Identify countries by official languages  
 ![Languages Quiz](/screenshots/language-quiz.png)  
 
----
-
-## 📸 Screenshots  
+## 📸 Screenshots / Demo  
 
 ### Country Information Page  
 ![Country Information Page](/screenshots/country-info.png)  
+*Explore detailed information about countries worldwide.*
 
 ### Flag Gallery  
 ![Flag Gallery](/screenshots/flag-gallery.png)  
+*Browse national flags from different countries.*  
 
 ### Quiz Page  
-![Quiz Page](/screenshots/quiz-page.png)  
+![Quiz Page](/screenshots/quiz-page.png) 
+*Challenge yourself with interactive geography quizzes.*  
 
 ### Reach the Country Game  
-![Reach the Country Game](/screenshots/reach-the-country.png)  
+![Reach the Country Game](/screenshots/reach-the-country.png) 
+*Navigate through borders to reach the target country.* 
 
 ### Normal Quiz  
 ![Normal Quiz](/screenshots/normal-quiz.png)  
+*Test your knowledge with fun country-based quizzes.* 
 
----
-
-## 🚀 Getting Started  
+## 🚀 Setup & Installation 
 
 Follow these steps to set up Find-Nations-Hub-Info locally:  
 
 ```bash
 # Clone the repository
-git clone <your-repo-link>
+git clone https://github.com/deepanshu1420/Find-Nations-Hub-Info.git
 
 # Navigate to project directory
 cd Find-Nations-Hub-Info
@@ -102,3 +96,4 @@ npm install
 
 # Start the development server
 npm start
+```
