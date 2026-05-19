@@ -35,23 +35,28 @@ Welcome to Find-Nations-Hub-Info! 🎉 Explore information about every country o
 ## 🎮 Game Descriptions  
 
 ### 🧭 Reach the Country  
-Start from a country and reach the destination through neighboring borders!  
+Start from a country and reach the destination through neighboring borders! 
+
 ![Reach the Country Game](/screenshots/reach-country.png)  
 
 ### 🗺️ Region Quiz  
-Test your knowledge of world regions
+Test your knowledge of world regions.
+
 ![Region Quiz](/screenshots/region-quiz.png)  
 
 ### 🌏 Sub-Region Quiz  
-Match countries to their sub-regions
+Match countries to their sub-regions.
+
 ![Sub-Region Quiz](/screenshots/subregion-quiz.png)  
 
 ### 🏛️ Capital Quiz  
-Identify countries by their capitals
+Identify countries by their capitals.
+
 ![Capital Quiz](/screenshots/capital-quiz.png)  
 
 ### 💱 Currencies Quiz  
-Match countries to their currencies  
+Match countries to their currencies.
+
 ![Currencies Quiz](/screenshots/currency-quiz.png)  
 
 ### 🗣️ Languages Quiz  
