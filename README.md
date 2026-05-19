@@ -6,7 +6,7 @@
 [![CSS3](https://img.shields.io/badge/CSS-3-blue)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![REST Countries API](https://img.shields.io/badge/API-REST%20Countries-lightgrey)](https://restcountries.com/)
 
-Welcome to Find-Nations-Hub-Info! 🎉 Explore information about every country on Earth with our rich interactive experience. Discover stats, flags, and challenge yourself with geography games! 🌎✨  
+Welcome to Find-Nations-Hub-Info! 🎉 Explore information about every country on Earth with our rich interactive experience. Discover stats, flags and challenge yourself with geography games! 🌎✨  
 
 **Explore flags and country info worldwide :** [Live Demo](https://nationshub-online.netlify.app/)  
 
@@ -39,23 +39,23 @@ Start from a country and reach the destination through neighboring borders!
 ![Reach the Country Game](/screenshots/reach-country.png)  
 
 ### 🗺️ Region Quiz  
-Test your knowledge of world regions  
+Test your knowledge of world regions.
 ![Region Quiz](/screenshots/region-quiz.png)  
 
 ### 🌏 Sub-Region Quiz  
-Match countries to their sub-regions  
+Match countries to their sub-regions. 
 ![Sub-Region Quiz](/screenshots/subregion-quiz.png)  
 
 ### 🏛️ Capital Quiz  
-Identify countries by their capitals  
+Identify countries by their capitals. 
 ![Capital Quiz](/screenshots/capital-quiz.png)  
 
 ### 💱 Currencies Quiz  
-Match countries to their currencies  
+Match countries to their currencies.  
 ![Currencies Quiz](/screenshots/currency-quiz.png)  
 
 ### 🗣️ Languages Quiz  
-Identify countries by official languages  
+Identify countries by official languages. 
 ![Languages Quiz](/screenshots/language-quiz.png)  
 
 ## 📸 Screenshots / Demo  
