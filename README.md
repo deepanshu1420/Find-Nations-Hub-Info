@@ -8,7 +8,7 @@
 
 Welcome to Find-Nations-Hub-Info! 🎉 Explore information about every country on Earth with our rich interactive experience. Discover stats, flags, and challenge yourself with geography games! 🌎✨  
 
-**Explore national flags and country info from around the world :** [Live Demo](https://nationshub-online.netlify.app/)  
+**Explore flags and country info worldwide :** [Live Demo](https://nationshub-online.netlify.app/)  
 
 ## ✨ Features / Highlights
 
