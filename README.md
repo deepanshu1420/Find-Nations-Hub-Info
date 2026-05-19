@@ -60,7 +60,8 @@ Match countries to their currencies.
 ![Currencies Quiz](/screenshots/currency-quiz.png)  
 
 ### 🗣️ Languages Quiz  
-Identify countries by official languages 
+Identify countries by official languages.
+
 ![Languages Quiz](/screenshots/language-quiz.png)  
 
 ## 📸 Screenshots / Demo  
