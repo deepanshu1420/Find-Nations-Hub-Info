@@ -30,7 +30,7 @@ Welcome to Find-Nations-Hub-Info! 🎉 Explore information about every country o
 - 🌐 Markup: HTML5  
 - 🎨 Styling: CSS3  
 - 🟨 Programming Language: JavaScript (ES6+)  
-- 🔗 API: [REST Countries API](https://restcountries.com/)   
+- 🔗 API: REST Countries API  
 
 ## 🎮 Game Descriptions  
 
