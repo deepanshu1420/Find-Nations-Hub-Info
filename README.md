@@ -88,18 +88,35 @@ Identify countries by official languages.
 
 ## 🚀 Setup & Installation 
 
-Follow these steps to set up Find-Nations-Hub-Info locally:  
+Follow these steps to set up **Find-Nations-Hub-Info** on your local machine:
 
+### 1️⃣ Clone the Repository
 ```bash
-# Clone the repository
 git clone https://github.com/deepanshu1420/Find-Nations-Hub-Info.git
+```
 
-# Navigate to the project directory
+### 2️⃣ Navigate to the Project Directory
+```bash
 cd Find-Nations-Hub-Info
+```
 
-# Install dependencies
+### 3️⃣ Install Dependencies
+```bash
 npm install
+```
 
-# Start the development server
+### 4️⃣ Start the Development Server
+```bash
 npm start
 ```
+
+### 5️⃣ Open in Your Browser
+Once the development server starts, open:
+
+```bash
+http://localhost:3000
+```
+
+🎉 You're all set! Explore countries, view detailed information, and enjoy the application.
+
+
