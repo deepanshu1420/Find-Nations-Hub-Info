@@ -88,7 +88,7 @@ Identify countries by official languages.
 
 ## 🚀 Setup & Installation 
 
-Follow these steps to set up **Find-Nations-Hub-Info** on your local machine:
+Follow these steps to set up `Find-Nations-Hub-Info` on your local machine:
 
 ### 1️⃣ Clone the Repository
 ```bash
