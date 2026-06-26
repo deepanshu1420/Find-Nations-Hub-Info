@@ -66,23 +66,23 @@ Identify countries by official languages.
 
 ## 📸 Screenshots / Demo  
 
-### Country Information Page  
+### 🌍 Country Information Page  
 ![Country Information Page](/screenshots/country-info.png)  
 *Explore detailed information about countries worldwide.*
 
-### Flag Gallery  
+### 🚩 Flag Gallery  
 ![Flag Gallery](/screenshots/flag-gallery.png)  
 *Browse national flags from different countries.*  
 
-### Quiz Page  
+### 🧠 Quiz Page  
 ![Quiz Page](/screenshots/quiz-page.png) 
 *Challenge yourself with interactive geography quizzes.*  
 
-### Reach the Country Game  
+### 🗺️ Reach the Country Game  
 ![Reach the Country Game](/screenshots/reach-the-country.png) 
 *Navigate through borders to reach the target country.* 
 
-### Normal Quiz  
+### 🎯 Normal Quiz  
 ![Normal Quiz](/screenshots/normal-quiz.png)  
 *Test your knowledge with fun country-based quizzes.* 
 
