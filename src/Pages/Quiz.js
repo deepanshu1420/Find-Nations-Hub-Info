@@ -55,10 +55,13 @@ const quizTypes = [
 ];
 
 function Quiz() {
-  const [selectedQuiz, setSelectedQuiz] = useState(null);
+  const [selectedQuiz, setSelectedQuiz] = useState(
+  sessionStorage.getItem("selected_quiz") || null
+  );
 
   const handleSelect = (key) => {
-    setSelectedQuiz(key);
+  sessionStorage.setItem("selected_quiz", key);
+  setSelectedQuiz(key);
   };
 
   // Render Normal_Quiz with the selected quiz type as a prop
@@ -78,6 +81,7 @@ function Quiz() {
           <button
             type="button"
             onClick={() => {
+              sessionStorage.removeItem("selected_quiz");
               setSelectedQuiz(null);
             }}
           >
@@ -98,6 +102,7 @@ function Quiz() {
           <button
             type="button"
             onClick={() => {
+              sessionStorage.removeItem("selected_quiz");
               setSelectedQuiz(null);
             }}
           >

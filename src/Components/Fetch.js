@@ -10,11 +10,19 @@ function Fetch() {
   const [loading, setLoading] = useState(!apiData); // if data exists, skip loading
 
   useEffect(() => {
-    if (apiData) return; // ✅ skip fetch if already loaded
+    if (apiData) return; // ✅ skip fetch if already in context
+
+    // ✅ Check sessionStorage first
+    const cached = sessionStorage.getItem("nations_cache");
+    if (cached) {
+      setApiData(JSON.parse(cached));
+      setLoading(false);
+      return;
+    }
 
     let isMounted = true;
 
-    const API_KEY = "rc_live_23326e28604b4d0594c77efafff8b695";
+    const API_KEY = "rc_live_e3277a386b7345c687cf4daeb592bbef";
 
     const fetchCountries = async () => {
       try {
@@ -47,6 +55,8 @@ function Fetch() {
 
         if (isMounted) {
           setApiData(mergedCountries);
+          // ✅ Save to sessionStorage (auto-clears when tab closes)
+          sessionStorage.setItem("nations_cache", JSON.stringify(mergedCountries));
           setLoading(false);
         }
       } catch (error) {

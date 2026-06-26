@@ -58,7 +58,16 @@ function setHighScore(quizType, score) {
 
 function NormalQuiz({ quizType: quizTypeProp }) {
   const [quizType, setQuizType] = useState(quizTypeProp || QUIZ_TYPES[0].key);
-  const { apiData } = useContext(SearchContext);
+  const context = useContext(SearchContext);
+  const apiData = context?.apiData || (() => {
+  const cached = sessionStorage.getItem("nations_cache");
+  if (cached) {
+    const parsed = JSON.parse(cached);
+    context?.setApiData(parsed);
+    return parsed;
+  }
+  return null;
+})();
   const [countries, setCountries] = useState([]);
   const [loading, setLoading] = useState(true);
   const [current, setCurrent] = useState(null);

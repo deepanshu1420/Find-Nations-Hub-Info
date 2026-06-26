@@ -33,7 +33,16 @@ function getCca3(country) {
 }
 
 function SpecialQuiz() {
-  const { apiData } = useContext(SearchContext);
+  const context = useContext(SearchContext);
+  const apiData = context?.apiData || (() => {
+  const cached = sessionStorage.getItem("nations_cache");
+  if (cached) {
+    const parsed = JSON.parse(cached);
+    context?.setApiData(parsed);
+    return parsed;
+  }
+  return null;
+})();
   const [countries, setCountries] = useState([]);
   const [loading, setLoading] = useState(true);
   const [start, setStart] = useState(null);

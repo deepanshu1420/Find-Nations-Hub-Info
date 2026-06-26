@@ -12,7 +12,16 @@ function CountryDetails() {
   const { country } = useParams();
   const location = useLocation();
   const context = useContext(SearchContext);
-  const allCountries = context?.apiData || null;
+  const rawData = context?.apiData;
+  const allCountries = rawData || (() => {
+  const cached = sessionStorage.getItem("nations_cache");
+  if (cached) {
+    const parsed = JSON.parse(cached);
+    context?.setApiData(parsed); // context bhi populate karo
+    return parsed;
+  }
+  return null;
+})();
 
   const [apiData, setApiData] = useState(location.state?.country || null);
   const [loading, setLoading] = useState(!location.state?.country);
