@@ -2,7 +2,7 @@ import React from "react";
 
 // Helper to get a pseudo-position for a country in the list (for animation)
 function getCountryIndex(cca3, countries) {
-  return countries.findIndex((c) => c.cca3 === cca3);
+  return countries.findIndex((c) => c.codes?.alpha_3 === cca3);  // ✅ v5 fix
 }
 
 function HopAnimation({ from, to, countries }) {

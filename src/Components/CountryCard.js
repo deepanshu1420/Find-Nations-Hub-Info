@@ -3,25 +3,40 @@ import { Link } from "react-router-dom";
 
 function CountryCard(props) {
   return (
-    <Link to={`/${props.name}`} title={props.name}>
+    <Link
+      to={`/${props.name}`}
+      state={{ country: props.country }}
+      title={props.name}
+    >
       <div className="country-card">
         <div className="ctd-img">
-          <img src={props.flag} alt={`${props.name} Flag`} />
+          <img
+          src={props.flag || "https://flagcdn.com/w320/un.png"}
+          alt={`${props.name} Flag`}
+          onError={(e) => {
+          e.target.src = "https://flagcdn.com/w320/un.png";
+          }}
+          />
         </div>
 
         <div className="ctd-info">
           <p className="ctd-title">{props.name}</p>
+
           <p className="ctd-desc">
             <strong>Population: </strong>
-            {props.population ? (props.population).toLocaleString() : <span>--</span>}
+            {props.population
+              ? props.population.toLocaleString()
+              : <span>--</span>}
           </p>
+
           <p className="ctd-desc">
             <strong>Region: </strong>
-            {props.region ? props.region : <span>--</span>}
+            {props.region || <span>--</span>}
           </p>
+
           <p className="ctd-desc">
             <strong>Capital: </strong>
-            {props.capital ? props.capital : <span>--</span>}
+            {props.capital || <span>--</span>}
           </p>
         </div>
       </div>

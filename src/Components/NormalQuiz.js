@@ -1,8 +1,8 @@
-/* This component now uses CSS variables defined by your .darkMode and .lightMode themes */
-
 import React, { useEffect, useState, useCallback } from "react";
 import { toast } from "sonner";
 import { FaCheckCircle, FaTimesCircle, FaTrophy } from "react-icons/fa";
+import { SearchContext } from "../Pages/Home";
+import { useContext } from "react";
 
 const QUIZ_TYPES = [
   { key: "region", label: "Region" },
@@ -12,21 +12,18 @@ const QUIZ_TYPES = [
   { key: "languages", label: "Languages" },
 ];
 
-const API_URL =
-  "https://restcountries.com/v3.1/all?fields=name,region,subregion,capital,currencies,languages,flags";
-
 function getQuizQuestion(country, quizType) {
   switch (quizType) {
     case "region":
-      return { question: `Which region does ${country.name.common} belong to?`, answer: country.region || "Unknown" };
+      return { question: `Which region does ${country.names?.common} belong to?`, answer: country.region || "Unknown" };
     case "sub-region":
-      return { question: `Which sub-region does ${country.name.common} belong to?`, answer: country.subregion || "Unknown" };
+      return { question: `Which sub-region does ${country.names?.common} belong to?`, answer: country.subregion || "Unknown" };
     case "capital":
-      return { question: `What is the capital of ${country.name.common}?`, answer: country.capital && country.capital[0] ? country.capital[0] : "Unknown" };
+      return { question: `What is the capital of ${country.names?.common}?`, answer: country.capitals?.[0]?.name || "Unknown" };
     case "currencies":
-      return { question: `What is the currency of ${country.name.common}?`, answer: country.currencies ? Object.values(country.currencies)[0]?.name : "Unknown" };
+      return { question: `What is the currency of ${country.names?.common}?`, answer: country.currencies?.[0]?.name || "Unknown" };
     case "languages":
-      return { question: `What is an official language of ${country.name.common}?`, answer: country.languages ? Object.values(country.languages)[0] : "Unknown" };
+      return { question: `What is an official language of ${country.names?.common}?`, answer: country.languages?.[0]?.name || "Unknown" };
     default:
       return { question: "", answer: "" };
   }
@@ -41,12 +38,12 @@ function getOptions(countries, quizType, correctAnswer) {
     switch (quizType) {
       case "region": value = random.region || "Unknown"; break;
       case "sub-region": value = random.subregion || "Unknown"; break;
-      case "capital": value = random.capital && random.capital[0] ? random.capital[0] : "Unknown"; break;
-      case "currencies": value = random.currencies ? Object.values(random.currencies)[0]?.name : "Unknown"; break;
-      case "languages": value = random.languages ? Object.values(random.languages)[0] : "Unknown"; break;
+      case "capital": value = random.capitals?.[0]?.name || "Unknown"; break;
+      case "currencies": value = random.currencies?.[0]?.name || "Unknown"; break;
+      case "languages": value = random.languages?.[0]?.name || "Unknown"; break;
       default: value = "";
     }
-    options.add(value);
+    if (value) options.add(value);
   }
   return Array.from(options).sort(() => Math.random() - 0.5);
 }
@@ -61,6 +58,7 @@ function setHighScore(quizType, score) {
 
 function NormalQuiz({ quizType: quizTypeProp }) {
   const [quizType, setQuizType] = useState(quizTypeProp || QUIZ_TYPES[0].key);
+  const { apiData } = useContext(SearchContext);
   const [countries, setCountries] = useState([]);
   const [loading, setLoading] = useState(true);
   const [current, setCurrent] = useState(null);
@@ -75,15 +73,13 @@ function NormalQuiz({ quizType: quizTypeProp }) {
     if (quizTypeProp && quizTypeProp !== quizType) setQuizType(quizTypeProp);
   }, [quizTypeProp]);
 
+  // Use already-loaded context data instead of fetching again
   useEffect(() => {
-    setLoading(true);
-    fetch(API_URL)
-      .then((res) => res.json())
-      .then((data) => {
-        setCountries(data);
-        setLoading(false);
-      });
-  }, []);
+    if (apiData && apiData.length > 0) {
+      setCountries(apiData);
+      setLoading(false);
+    }
+  }, [apiData]);
 
   const nextQuestion = useCallback(
     (type = quizType, data = countries) => {
@@ -91,9 +87,9 @@ function NormalQuiz({ quizType: quizTypeProp }) {
         switch (type) {
           case "region": return c.region;
           case "sub-region": return c.subregion;
-          case "capital": return c.capital && c.capital.length > 0;
-          case "currencies": return c.currencies && Object.values(c.currencies).length > 0;
-          case "languages": return c.languages && Object.values(c.languages).length > 0;
+          case "capital": return c.capitals && c.capitals.length > 0;
+          case "currencies": return c.currencies && c.currencies.length > 0;
+          case "languages": return c.languages && c.languages.length > 0;
           default: return false;
         }
       });
@@ -106,7 +102,6 @@ function NormalQuiz({ quizType: quizTypeProp }) {
     [countries, quizType]
   );
 
-  // ✅ Added quizType here to fix ESLint warning
   useEffect(() => {
     setHighScoreState(getHighScore(quizType));
     setScore(0);
@@ -158,7 +153,7 @@ function NormalQuiz({ quizType: quizTypeProp }) {
 
   return (
     <div style={{ minHeight: '70vh', padding: 20, backgroundColor: 'var(--bg-color)', color: 'var(--text-color)', display: 'flex', justifyContent: 'center' }}>
-      <div style={{ height:'100%', width: '100%', maxWidth: 500, backgroundColor: 'var(--nav-bg-color)', borderRadius: 16, padding: 24, boxShadow: '0 4px 24px var(--nav-shadow-color)' }}>
+      <div style={{ height: '100%', width: '100%', maxWidth: 500, backgroundColor: 'var(--nav-bg-color)', borderRadius: 16, padding: 24, boxShadow: '0 4px 24px var(--nav-shadow-color)' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 10 }}>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             {QUIZ_TYPES.map((qt) => (
@@ -197,8 +192,13 @@ function NormalQuiz({ quizType: quizTypeProp }) {
         ) : (
           <>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-              <img src={current.country.flags?.png} alt={current.country.name.common} style={{ width: 48, height: 32, borderRadius: 4 }} />
-              <span style={{ fontWeight: 700 }}>{current.country.name.common}</span>
+              <img
+                src={current.country.flag?.url_png || "https://flagcdn.com/w320/un.png"}
+                alt={current.country.names?.common}
+                style={{ width: 48, height: 32, borderRadius: 4 }}
+                onError={(e) => { e.target.src = "https://flagcdn.com/w320/un.png"; }}
+              />
+              <span style={{ fontWeight: 700 }}>{current.country.names?.common}</span>
               <span style={{ marginLeft: 'auto', color: '#fdd835', fontWeight: 600 }}>Q{questionNum}/10</span>
             </div>
             <h3 style={{ marginTop: 16, fontSize: 18 }}>{current.question}</h3>

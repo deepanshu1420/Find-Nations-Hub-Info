@@ -1,76 +1,56 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { IoArrowBack } from "react-icons/io5";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, useNavigate, Link, useLocation } from "react-router-dom";
 import Error from "../Components/Error";
 import Spinner from "../Components/Spinner";
 import { findCountryName } from "../Components/CountryCodes";
+import { SearchContext } from "../Pages/Home";
 import "../Styles/CountryDetails.css";
 
 function CountryDetails() {
-  // useNavigate to change route/page path
   const navigate = useNavigate();
   const { country } = useParams();
-  const [apiData, setApiData] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const location = useLocation();
+  const context = useContext(SearchContext);
+  const allCountries = context?.apiData || null;
+
+  const [apiData, setApiData] = useState(location.state?.country || null);
+  const [loading, setLoading] = useState(!location.state?.country);
   const [error, setError] = useState(null);
 
-  const fetchNativeNames = (name) =>
-    Object.values(name.nativeName).map((language) => language.common);
-
-  const fetchCurrencies = (name) =>
-    Object.values(name).map(
-      (currencies) => `${currencies.name} (${currencies.symbol})`
-    );
-
   useEffect(() => {
-    // start loading screen and clear previous errors
-    setLoading(true);
     setError(null);
 
-    let isMounted = true;
-    const fetchUrl =
-      country.length === 3
-        ? `https://restcountries.com/v3.1/alpha/${country}`
-        : `https://restcountries.com/v3.1/name/${country}?fullText=true`;
+    // 1. Router state has full object (came from CountryCard click)
+    if (location.state?.country) {
+      setApiData(location.state.country);
+      setLoading(false);
+      return;
+    }
 
-    fetch(fetchUrl)
-      .then((response) => {
-        if (!response.ok)
-          throw new Error(`HTTP error! Status: ${response.status}`);
+    // 2. Find in global list (came from border country link)
+    if (allCountries) {
+      const found = allCountries.find(
+        (c) =>
+          c.names?.common?.toLowerCase() === country.toLowerCase() ||
+          c.codes?.alpha_3 === country
+      );
+      if (found) {
+        setApiData(found);
+        setLoading(false);
+        return;
+      }
+    }
 
-        return response.json();
-      })
-      .then((data) => {
-        if (isMounted) {
-          setApiData(data[0]);
-          setLoading(false);
-        }
-      })
-      .catch((error) => {
-        if (isMounted) {
-          if (error.message === "Failed to fetch") {
-            setError("No internet connection. Please check your network.");
-          } else {
-            setError("An error occurred while fetching data from the API.");
-          }
-          setLoading(false);
-        }
-      });
+    // 3. Global list not loaded yet, keep showing spinner
+    setLoading(true);
 
-    return () => {
-      isMounted = false;
-    };
-  }, [country]);
+  }, [country, location.state, allCountries]);
 
   return (
     <section className="country-details-section">
       <div className="back-btn-container" data-aos="fade-right">
-        <button
-          type="button"
-          onClick={() => {
-            navigate("/");
-          }}
-        >
+        <button type="button" onClick={() => navigate("/")}>
           <IoArrowBack /> Back
         </button>
       </div>
@@ -79,90 +59,96 @@ function CountryDetails() {
         <Spinner />
       ) : error ? (
         <Error error={error} />
-      ) : (
+      ) : apiData ? (
         <div className="countryInfoSection">
           <div className="countryFlag-container" data-aos="fade-right">
-            <img src={apiData.flags.png} alt={`${apiData.name.common} Flag`} title={`${apiData.name.common} Flag`} />
+            <img
+            src={apiData.flag?.url_png || "https://flagcdn.com/w320/un.png"}
+            alt={`${apiData.names?.common} Flag`}
+            title={`${apiData.names?.common} Flag`}
+            onError={(e) => {
+              e.target.src = "https://flagcdn.com/w320/un.png";
+              }}
+            />
           </div>
 
           <div className="countryStats-container" data-aos="fade-left">
-            <p className="country-title">{apiData.name.common}</p>
+            <p className="country-title">{apiData.names?.common}</p>
 
             <div className="country-details">
               <div>
                 <p>
                   <strong>Native Names: </strong>
-                  {apiData.name ? (
-                    fetchNativeNames(apiData.name).map((names) => `${names}`).join(", ")
-                  ) : (
-                    <span>--</span>
-                  )}
+                  {apiData.names?.native
+                    ? Object.values(apiData.names.native)
+                        .map((n) => n.common)
+                        .join(", ")
+                    : "--"}
                 </p>
                 <p>
                   <strong>Population: </strong>
-                  {apiData.population ? (
-                    apiData.population.toLocaleString()
-                  ) : (
-                    <span>--</span>
-                  )}
+                  {apiData.population
+                    ? apiData.population.toLocaleString()
+                    : "--"}
                 </p>
                 <p>
                   <strong>Region: </strong>
-                  {apiData.region ? apiData.region : <span>--</span>}
+                  {apiData.region || "--"}
                 </p>
                 <p>
                   <strong>Sub Region: </strong>
-                  {apiData.subregion ? apiData.subregion : <span>--</span>}
+                  {apiData.subregion || "--"}
                 </p>
                 <p>
                   <strong>Capital: </strong>
-                  {apiData.capital && typeof apiData.capital === "object" ? (
-                    apiData.capital.map((record) => `${record}`).join(", ")
-                  ) : (
-                    <span>--</span>
-                  )}
+                  {apiData.capitals?.length
+                    ? apiData.capitals.map((c) => c.name).join(", ")
+                    : "--"}
                 </p>
               </div>
 
               <div>
                 <p>
                   <strong>Top Level Domain: </strong>
-                  {apiData.tld ? (
-                    apiData.tld.map((record) => `${record}`).join(", ")
-                  ) : (
-                    <span>--</span>
-                  )}
+                  {apiData.tlds?.length ? apiData.tlds.join(", ") : "--"}
                 </p>
                 <p>
                   <strong>Currencies: </strong>
-                  {apiData.currencies ? (
-                    fetchCurrencies(apiData.currencies).map((record) => `${record}`).join(", ")
-                  ) : (
-                    <span>--</span>
-                  )}
+                  {apiData.currencies?.length
+                    ? apiData.currencies
+                        .map((c) => `${c.name} (${c.symbol})`)
+                        .join(", ")
+                    : "--"}
                 </p>
                 <p>
                   <strong>Languages: </strong>
-                  {apiData.languages ? (
-                    Object.values(apiData.languages).map((record) => `${record}`).join(", ")
-                  ) : (
-                    <span>--</span>
-                  )}
+                  {apiData.languages?.length
+                    ? apiData.languages.map((l) => l.name).join(", ")
+                    : "--"}
                 </p>
               </div>
             </div>
 
             <div className="country-border">
-              {apiData.borders && (
+              {apiData.borders?.length > 0 && (
                 <p>
                   <strong>Border Countries: </strong>
                 </p>
               )}
-              {apiData.borders ? (
-                apiData.borders.map((record, index) => {
-                  const countryName = findCountryName(record);
+              {apiData.borders?.length > 0 ? (
+                apiData.borders.map((code, index) => {
+                  const countryName = findCountryName(code);
+                  const borderCountry =
+                    allCountries?.find((c) => c.codes?.alpha_3 === code) ||
+                    null;
+
                   return (
-                    <Link to={`/${record}`} key={index} title={countryName}>
+                    <Link
+                      to={`/${countryName}`}
+                      key={index}
+                      title={countryName}
+                      state={{ country: borderCountry }}
+                    >
                       <span className="country-border-name">{countryName}</span>
                     </Link>
                   );
@@ -175,7 +161,7 @@ function CountryDetails() {
             </div>
           </div>
         </div>
-      )}
+      ) : null}
     </section>
   );
 }

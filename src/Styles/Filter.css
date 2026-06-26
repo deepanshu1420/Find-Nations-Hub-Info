@@ -99,3 +99,14 @@
         width: 100%;
     }
 }
+
+/* Fix browser autocomplete white background */
+.filter-input input:-webkit-autofill,
+.filter-input input:-webkit-autofill:hover,
+.filter-input input:-webkit-autofill:focus,
+.filter-input input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px var(--nav-bg-color) inset !important;
+    -webkit-text-fill-color: var(--text-color) !important;
+    caret-color: var(--text-color) !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
