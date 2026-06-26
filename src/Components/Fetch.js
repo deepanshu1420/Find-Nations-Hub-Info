@@ -68,6 +68,7 @@ function Fetch() {
     return () => {
       isMounted = false;
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // ✅ empty deps, runs only once
 
   return (

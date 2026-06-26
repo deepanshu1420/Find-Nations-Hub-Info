@@ -71,6 +71,7 @@ function NormalQuiz({ quizType: quizTypeProp }) {
 
   useEffect(() => {
     if (quizTypeProp && quizTypeProp !== quizType) setQuizType(quizTypeProp);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [quizTypeProp]);
 
   // Use already-loaded context data instead of fetching again
