@@ -1,4 +1,4 @@
-# 🌍 Find-Nations-Hub-Info &middot; [![Author Deepanshu Sharma](https://img.shields.io/badge/Author-Deepanshu-%3C%3E)](https://github.com/deepanshu1420)
+# 🌍 Find Nations Hub Info &middot; [![Author Deepanshu Sharma](https://img.shields.io/badge/Author-Deepanshu-%3C%3E)](https://github.com/deepanshu1420)
 
 [![React](https://img.shields.io/badge/React-v18-blue)](https://reactjs.org/) 
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
