@@ -12,17 +12,17 @@ Welcome to `Nations Hub Info!` 🎉 Explore information about every country on E
 
 ## ✨ Features / Highlights
 
-- **📚 Country Information:** Detailed stats including population, area, capital, languages, currency  
-- **🎌 Flag Gallery:** Comprehensive collection of national flags  
-- **🔍 Search Functionality:** Instantly find any country  
+- **📚 Country Information:** Detailed stats including population, area, capital, languages, currency. 
+- **🎌 Flag Gallery:** Comprehensive collection of national flags.
+- **🔍 Search Functionality:** Instantly find any country. 
 - **🎮 Interactive Quiz Games:**
-  - **🧭 Reach the Country:** Navigate through neighboring borders  
-  - **🗺️ Region Quiz:** Test your regional knowledge  
-  - **🌏 Sub-Region Quiz:** Match countries to sub-regions  
-  - **🏛️ Capital Quiz:** Identify countries by capitals  
-  - **💱 Currencies Quiz:** Match currencies to countries  
-  - **🗣️ Languages Quiz:** Identify official languages  
-- **📱 Responsive Design:** Works perfectly on all devices  
+  - **🧭 Reach the Country:** Navigate through neighboring borders. 
+  - **🗺️ Region Quiz:** Test your regional knowledge.
+  - **🌏 Sub-Region Quiz:** Match countries to sub-regions.  
+  - **🏛️ Capital Quiz:** Identify countries by capitals.
+  - **💱 Currencies Quiz:** Match currencies to countries. 
+  - **🗣️ Languages Quiz:** Identify official languages. 
+- **📱 Responsive Design:** Works perfectly on all devices.  
 
 ## ⚙️ Tech Stack Used
 
