@@ -48,3 +48,11 @@ footer {
   .button:hover svg path {
     fill: #181717;
   }
+
+  footer a {
+  color: var(--text-color);
+}
+
+footer a:hover {
+  color: #64b5f6;
+}

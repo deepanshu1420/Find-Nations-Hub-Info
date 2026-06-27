@@ -11,22 +11,25 @@ const Footer = () => {
         backgroundColor: "var(--nav-bg-color)",
         color: "var(--text-color)",
         boxShadow: "0 -2px 6px var(--nav-shadow-color)",
-        fontSize: 35,
+        fontSize: 24,
         fontWeight: 500,
         display: "flex",
         alignItems: "center",
       }}
     >
+      <span style={{ position: "absolute", left: "24px", fontSize: "16px" }}>
+        © 2026 Nations Hub Info. 
+      </span>
       <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
         <span>Made with</span>
-        <FaHeart color="#e53935" size={40} />
+        <FaHeart color="#e53935" size={26} />
         <span>
           by{" "}
           <a
             href="https://github.com/deepanshu1420"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ color: "inherit" }}
+            style={{ textDecoration: "none" }}
           >
             Deepanshu Sharma
           </a>
