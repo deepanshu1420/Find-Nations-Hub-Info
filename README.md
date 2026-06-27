@@ -6,7 +6,7 @@
 [![CSS3](https://img.shields.io/badge/CSS-3-blue)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![REST Countries API](https://img.shields.io/badge/API-REST%20Countries-lightgrey)](https://restcountries.com/)
 
-Welcome to Find-Nations-Hub-Info! 🎉 Explore information about every country on Earth with our rich interactive experience. Discover stats, flags and challenge yourself with geography games! 🌎✨  
+Welcome to `Nations Hub Info!` 🎉 Explore information about every country on Earth with our rich interactive experience. Discover stats, flags and challenge yourself with geography games! 🌎✨  
 
 **Explore flags and country info worldwide :** [Live Demo](https://nationshub-online.netlify.app/)  
 
