@@ -1,5 +1,6 @@
 import { FaHeart } from "react-icons/fa";
 import "../Styles/Footer.css";
+
 const Footer = () => {
   return (
     <footer
@@ -15,15 +16,24 @@ const Footer = () => {
         fontWeight: 500,
         display: "flex",
         alignItems: "center",
+        position: "relative",
       }}
     >
-      <span style={{ position: "absolute", left: "24px", fontSize: "16px" }}>
-        © 2026 Nations Hub Info. 
+      <span className="copyright">
+        © 2026 Nations Hub Info.
       </span>
-      <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-        <span>Made with</span>
-        <FaHeart color="#e53935" size={26} />
+
+      <div
+        className="footer-content"
+        style={{ display: "flex", alignItems: "center", gap: 6 }}
+      >
         <span>
+          Made with{" "}
+          <FaHeart
+            color="#e53935"
+            size={26}
+            style={{ verticalAlign: "middle", margin: "0 2px" }}
+          />{" "}
           by{" "}
           <a
             href="https://github.com/deepanshu1420"
@@ -35,14 +45,15 @@ const Footer = () => {
           </a>
         </span>
       </div>
+
       <button
         className="button"
         onClick={() => {
-          const windosw = window.open(
+          const windowRef = window.open(
             "https://github.com/deepanshu1420/Find-Nations-Hub-Info",
             "_blank"
           );
-          windosw.focus();
+          windowRef?.focus();
         }}
       >
         <svg
