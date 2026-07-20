@@ -89,6 +89,10 @@ Welcome to `Nations Hub Info!` explore information about every country on Earth 
 ![Normal Quiz](/screenshots/normal-quiz.png)  
 *Test your knowledge with fun `country-based quizzes`.* 
 
+### 📱 Responsive View  
+![Responsive View](/screenshots/ResponsiveView.png)  
+*Enjoy a seamless experience with a fully `responsive layout` across all devices.*
+
 ## 🚀 Setup & Installation 
 
 > To set up and run the project locally, follow these steps below:
