@@ -93,7 +93,7 @@ Welcome to `Nations Hub Info!` Explore information about every country on Earth 
 ![Responsive View](/screenshots/ResponsiveView.png)  
 *Enjoy a seamless experience with a fully `responsive layout` across all devices.*
 
-## 🚀 Setup & Installation 
+## 🛠️ Setup & Installation 
 
 > To set up and run the project locally, follow these steps below:
 
