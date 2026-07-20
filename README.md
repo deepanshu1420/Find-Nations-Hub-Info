@@ -83,7 +83,7 @@ Welcome to `Nations Hub Info!` Explore information about every country on Earth 
 
 ### 🗺️ Reach the Country Game  
 ![Reach the Country Game](/screenshots/reach-the-country.png) 
-*`Navigate through borders` to reach the target country.* 
+*Navigate through `borders` to reach the target country.* 
 
 ### 🎯 Normal Quiz  
 ![Normal Quiz](/screenshots/normal-quiz.png)  
