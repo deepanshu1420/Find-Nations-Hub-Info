@@ -30,7 +30,7 @@ Welcome to `Nations Hub Info!` Explore information about every country on Earth 
 
 - ⚛️ Frontend: React.js  
 - 🏗️ Markup & Styling: HTML5 & CSS3  
-- 🟨 Programming Language: JavaScript (ES6+)  
+- 🟨 Programming Language: JavaScript (ES6)  
 - 🔗 API: REST Countries API  
 - 🌿 Version Control: Git & GitHub
 - 🔗 Deployment & Hosting: Vercel
