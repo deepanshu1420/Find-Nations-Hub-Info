@@ -69,6 +69,8 @@ Welcome to `Nations Hub Info!` Explore information about every country on Earth 
 
 ## 📸 Screenshots / Demo  
 
+> Take a look at some screenshots showcasing the website.
+
 ### 🌍 Country Information Page  
 ![Country Information Page](/screenshots/country-info.png)  
 *Explore detailed information about `countries worldwide`.*
