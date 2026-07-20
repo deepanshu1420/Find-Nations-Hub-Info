@@ -5,8 +5,8 @@
 [![HTML5](https://img.shields.io/badge/HTML-5-orange)](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
 [![CSS3](https://img.shields.io/badge/CSS-3-blue)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![REST Countries API](https://img.shields.io/badge/API-REST%20Countries-lightgrey)](https://restcountries.com/)
-[![Git](https://img.shields.io/badge/Git-Brown)](https://git-scm.com/)
-[![Vercel](https://img.shields.io/badge/Vercel-Pink)](https://vercel.com/)
+[![Git](https://img.shields.io/badge/Git-v2-8B4513)](https://git-scm.com/)
+[![Vercel](https://img.shields.io/badge/Vercel-Live-EC4899)](https://vercel.com/)
 
 Welcome to `Nations Hub Info!` 🎉 Explore information about every country on Earth with our rich interactive experience. Discover stats, flags and challenge yourself with geography games! 🌎✨  
 
