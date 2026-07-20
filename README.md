@@ -1,4 +1,4 @@
-# 🌍 Find Nations Hub Info &middot; [![Author Deepanshu Sharma](https://img.shields.io/badge/Author-Deepanshu-%3C%3E)](https://github.com/deepanshu1420)
+# 🏳️ Find Nations Hub Info
 
 [![React](https://img.shields.io/badge/React-v18-A52A2A)](https://reactjs.org/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
@@ -38,7 +38,7 @@ Welcome to `Nations Hub Info!` 🎉 Explore information about every country on E
 ## 🎮 Game Descriptions  
 
 ### 🧭 Reach the Country  
-*Start from a country and reach the destination through neighboring borders!* 
+*Start from a country and reach the destination through neighboring borders.* 
 
 ![Reach the Country Game](/screenshots/reach-country.png)  
 
@@ -91,7 +91,7 @@ Welcome to `Nations Hub Info!` 🎉 Explore information about every country on E
 
 ## 🚀 Setup & Installation 
 
-> Follow these steps to set up `Find-Nations-Hub-Info` on your local machine:
+> To set up and run the project locally, follow these steps below:
 
 ### 1️⃣ Clone the Repository
 
@@ -125,6 +125,6 @@ npm start
 http://localhost:3000
 ```
 
-🎉 You're all set! Browse countries, `explore their flags` and detailed information, and enjoy the application.
+You're all set! Browse countries, `explore their flags`, and learn more about every nation. 🇮🇳
 
 
