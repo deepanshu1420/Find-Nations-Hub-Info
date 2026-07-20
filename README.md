@@ -1,6 +1,6 @@
 # 🌍 Find Nations Hub Info &middot; [![Author Deepanshu Sharma](https://img.shields.io/badge/Author-Deepanshu-%3C%3E)](https://github.com/deepanshu1420)
 
-[![React](https://img.shields.io/badge/React-v18-800000)](https://reactjs.org/) 
+[![React](https://img.shields.io/badge/React-v18-A52A2A)](https://reactjs.org/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![HTML5](https://img.shields.io/badge/HTML-5-orange)](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
 [![CSS3](https://img.shields.io/badge/CSS-3-blue)](https://developer.mozilla.org/en-US/docs/Web/CSS)
@@ -71,55 +71,60 @@ Welcome to `Nations Hub Info!` 🎉 Explore information about every country on E
 
 ### 🌍 Country Information Page  
 ![Country Information Page](/screenshots/country-info.png)  
-*Explore detailed information about countries worldwide.*
+*Explore detailed information about `countries worldwide`.*
 
 ### 🚩 Flag Gallery  
 ![Flag Gallery](/screenshots/flag-gallery.png)  
-*Browse national flags from different countries.*  
+*Browse `national flags` from different countries.*  
 
 ### 🧠 Quiz Page  
 ![Quiz Page](/screenshots/quiz-page.png) 
-*Challenge yourself with interactive geography quizzes.*  
+*Challenge yourself with interactive `geography quizzes`.*  
 
 ### 🗺️ Reach the Country Game  
 ![Reach the Country Game](/screenshots/reach-the-country.png) 
-*Navigate through borders to reach the target country.* 
+*`Navigate through borders` to reach the target country.* 
 
 ### 🎯 Normal Quiz  
 ![Normal Quiz](/screenshots/normal-quiz.png)  
-*Test your knowledge with fun country-based quizzes.* 
+*Test your knowledge with fun `country-based quizzes`.* 
 
 ## 🚀 Setup & Installation 
 
-Follow these steps to set up `Find-Nations-Hub-Info` on your local machine:
+> Follow these steps to set up `Find-Nations-Hub-Info` on your local machine:
 
 ### 1️⃣ Clone the Repository
+
 ```bash
 git clone https://github.com/deepanshu1420/Find-Nations-Hub-Info.git
 ```
 
 ### 2️⃣ Navigate to the Project Directory
+
 ```bash
 cd Find-Nations-Hub-Info
 ```
 
-### 3️⃣ Install Dependencies
+### 3️⃣ Install the required dependencies
+
+> Make sure you have `Node.js` installed, then run:
+
 ```bash
 npm install
 ```
 
-### 4️⃣ Start the Development Server
+### 4️⃣ Start the development server
+
 ```bash
 npm start
 ```
 
-### 5️⃣ Open in Your Browser
-Once the development server starts, open:
+✅ **That's it!** The project should now be running locally at:
 
-```bash
+```text
 http://localhost:3000
 ```
 
-🎉 You're all set! Explore countries, view detailed information, and enjoy the application.
+🎉 You're all set! Browse countries, `explore their flags` and detailed information, and enjoy the application.
 
 
