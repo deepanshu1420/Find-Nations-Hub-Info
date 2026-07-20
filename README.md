@@ -1,10 +1,10 @@
 # 🌍 Find Nations Hub Info &middot; [![Author Deepanshu Sharma](https://img.shields.io/badge/Author-Deepanshu-%3C%3E)](https://github.com/deepanshu1420)
 
-[![React](https://img.shields.io/badge/React-v18-blue)](https://reactjs.org/) 
+[![React](https://img.shields.io/badge/React-v18-800000)](https://reactjs.org/) 
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![HTML5](https://img.shields.io/badge/HTML-5-orange)](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
 [![CSS3](https://img.shields.io/badge/CSS-3-blue)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![REST Countries API](https://img.shields.io/badge/API-REST%20Countries-lightgrey)](https://restcountries.com/)
+[![REST Countries API](https://img.shields.io/badge/API-REST%20Countries-red)](https://restcountries.com/)
 [![Git](https://img.shields.io/badge/Git-v2-8B4513)](https://git-scm.com/)
 [![Vercel](https://img.shields.io/badge/Vercel-Live-EC4899)](https://vercel.com/)
 
@@ -43,27 +43,27 @@ Welcome to `Nations Hub Info!` 🎉 Explore information about every country on E
 ![Reach the Country Game](/screenshots/reach-country.png)  
 
 ### 🗺️ Region Quiz  
-Test your knowledge of world regions.
+*Test your knowledge of world regions.*
 
 ![Region Quiz](/screenshots/region-quiz.png)  
 
 ### 🌏 Sub-Region Quiz  
-Match countries to their sub-regions.
+*Match countries to their sub-regions.*
 
 ![Sub-Region Quiz](/screenshots/subregion-quiz.png)  
 
 ### 🏛️ Capital Quiz  
-Identify countries by their capitals.
+*Identify countries by their capitals.*
 
 ![Capital Quiz](/screenshots/capital-quiz.png)  
 
 ### 💱 Currencies Quiz  
-Match countries to their currencies.
+*Match countries to their currencies.*
 
 ![Currencies Quiz](/screenshots/currency-quiz.png)  
 
 ### 🗣️ Languages Quiz  
-Identify countries by official languages.
+*Identify countries by official languages.*
 
 ![Languages Quiz](/screenshots/language-quiz.png)  
 
