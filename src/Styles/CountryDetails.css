@@ -2,6 +2,7 @@
     min-height: 90vh;
     padding: 0 40px;
     background-color: var(--bg-color);
+    overflow-x: hidden;
 }
 .back-btn-container {
     height: 120px;
