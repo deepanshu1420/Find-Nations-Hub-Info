@@ -8,7 +8,7 @@
 [![Git](https://img.shields.io/badge/Git-v2-8B4513)](https://git-scm.com/)
 [![Vercel](https://img.shields.io/badge/Vercel-Live-EC4899)](https://vercel.com/)
 
-Welcome to `Nations Hub Info!` explore information about every country on Earth with our rich interactive experience. Discover stats, flags and challenge yourself with geography games.  
+Welcome to `Nations Hub Info!` Explore information about every country on Earth with our rich interactive experience. Discover stats, flags and challenge yourself with geography games.  
 
 **Explore flags and country info worldwide :** [Live Demo](https://nationshub-online.netlify.app/)  
 
