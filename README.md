@@ -17,8 +17,8 @@ Welcome to `Nations Hub Info!` Explore information about every country on Earth 
 - **📚 Country Information:** Detailed stats including population, area, capital, languages, currency. 
 - **🎌 Flag Gallery:** Comprehensive collection of national flags.
 - **🔍 Search Functionality:** Instantly find any country. 
-- **🎮 Interactive Quiz Games:**
-  - **🧭 Reach the Country:** Navigate through neighboring borders. 
+- **🎲 Interactive Quiz Games:**
+  - **🛂 Reach the Country:** Navigate through neighboring borders. 
   - **🗺️ Region Quiz:** Test your regional knowledge.
   - **🌏 Sub-Region Quiz:** Match countries to sub-regions.  
   - **🏛️ Capital Quiz:** Identify countries by capitals.
@@ -31,13 +31,13 @@ Welcome to `Nations Hub Info!` Explore information about every country on Earth 
 - ⚛️ Frontend: React.js  
 - 🏗️ Markup & Styling: HTML5 & CSS3  
 - 🟨 Programming Language: JavaScript (ES6)  
-- 🔗 API: REST Countries API  
+- 📡 API: REST Countries API  
 - 🌿 Version Control: Git & GitHub
 - 🔗 Deployment & Hosting: Vercel
 
 ## 🎮 Game Descriptions  
 
-### 🧭 Reach the Country  
+### 🚶 Reach the Country  
 *Start from a country and reach the destination through neighboring borders.* 
 
 ![Reach the Country Game](/screenshots/reach-country.png)  
@@ -57,12 +57,12 @@ Welcome to `Nations Hub Info!` Explore information about every country on Earth 
 
 ![Capital Quiz](/screenshots/capital-quiz.png)  
 
-### 💱 Currencies Quiz  
+### 💰 Currencies Quiz  
 *Match countries to their currencies.*
 
 ![Currencies Quiz](/screenshots/currency-quiz.png)  
 
-### 🗣️ Languages Quiz  
+### 🔤 Languages Quiz  
 *Identify countries by official languages.*
 
 ![Languages Quiz](/screenshots/language-quiz.png)  
@@ -72,26 +72,32 @@ Welcome to `Nations Hub Info!` Explore information about every country on Earth 
 > Take a look at some screenshots showcasing the website.
 
 ### 🌍 Country Information Page  
+
 ![Country Information Page](/screenshots/country-info.png)  
 *Explore detailed information about `countries worldwide`.*
 
 ### 🚩 Flag Gallery  
+
 ![Flag Gallery](/screenshots/flag-gallery.png)  
 *Browse `national flags` from different countries.*  
 
 ### 🧠 Quiz Page  
+
 ![Quiz Page](/screenshots/quiz-page.png) 
 *Challenge yourself with interactive `geography quizzes`.*  
 
-### 🗺️ Reach the Country Game  
+### 📍 Reach the Country Game
+
 ![Reach the Country Game](/screenshots/reach-the-country.png) 
 *Navigate through `borders` to reach the target country.* 
 
 ### 🎯 Normal Quiz  
+
 ![Normal Quiz](/screenshots/normal-quiz.png)  
 *Test your knowledge with fun `country-based quizzes`.* 
 
-### 📱 Responsive View  
+### 📱 Responsive View 
+
 ![Responsive View](/screenshots/ResponsiveView.png)  
 *Enjoy a seamless experience with a fully `responsive layout` across all devices.*
 
