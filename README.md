@@ -5,6 +5,8 @@
 [![HTML5](https://img.shields.io/badge/HTML-5-orange)](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
 [![CSS3](https://img.shields.io/badge/CSS-3-blue)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![REST Countries API](https://img.shields.io/badge/API-REST%20Countries-lightgrey)](https://restcountries.com/)
+[![Git](https://img.shields.io/badge/Git-Brown)](https://git-scm.com/)
+[![Vercel](https://img.shields.io/badge/Vercel-Pink)](https://vercel.com/)
 
 Welcome to `Nations Hub Info!` 🎉 Explore information about every country on Earth with our rich interactive experience. Discover stats, flags and challenge yourself with geography games! 🌎✨  
 
@@ -27,15 +29,16 @@ Welcome to `Nations Hub Info!` 🎉 Explore information about every country on E
 ## ⚙️ Tech Stack Used
 
 - ⚛️ Frontend: React.js  
-- 🌐 Markup: HTML5  
-- 🎨 Styling: CSS3  
+- 🏗️ Markup & Styling: HTML5 & CSS3  
 - 🟨 Programming Language: JavaScript (ES6+)  
 - 🔗 API: REST Countries API  
+- 🌿 Version Control: Git & GitHub
+- 🔗 Deployment & Hosting: Vercel
 
 ## 🎮 Game Descriptions  
 
 ### 🧭 Reach the Country  
-Start from a country and reach the destination through neighboring borders! 
+*Start from a country and reach the destination through neighboring borders!* 
 
 ![Reach the Country Game](/screenshots/reach-country.png)  
 
